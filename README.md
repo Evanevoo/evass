@@ -1,16 +1,14 @@
-# Gas Cylinder Tracking System
+# Gas Tracker Application
 
-A comprehensive system for tracking gas cylinders, their movements, and maintenance. This system includes a backend API built with FastAPI and a frontend web application.
+A full-stack application for tracking gas usage and expenses, built with FastAPI and React.
 
 ## Features
 
-- User authentication and authorization with role-based access control
-- Cylinder management with barcode and QR code generation
-- Customer and location management
-- Movement tracking for cylinders
-- Transaction management
-- Maintenance scheduling and tracking
-- Analytics and reporting
+- User authentication and authorization
+- Gas usage tracking and analytics
+- QR code generation for quick data entry
+- Data visualization and reporting
+- Responsive web interface
 
 ## Tech Stack
 
@@ -19,120 +17,95 @@ A comprehensive system for tracking gas cylinders, their movements, and maintena
 - SQLAlchemy
 - PostgreSQL
 - JWT Authentication
-- Pandas for data analysis
-- Matplotlib and Seaborn for visualization
+- Alembic for database migrations
 
-### Frontend (Coming Soon)
+### Frontend
 - React
 - TypeScript
 - Material-UI
-- Redux Toolkit
+- Chart.js for visualizations
 
 ## Getting Started
 
 ### Prerequisites
-- Python 3.9+
+- Python 3.8+
+- Node.js 14+
 - PostgreSQL
-- Node.js 16+ (for frontend)
+- Git
 
-### Backend Setup
+### Installation
 
-1. Create a virtual environment:
+1. Clone the repository:
 ```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+git clone https://github.com/Evanevoo/evass.git
+cd evass
 ```
 
-2. Install dependencies:
+2. Set up the backend:
 ```bash
 cd backend
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-3. Create a `.env` file in the backend directory:
-```env
-DATABASE_URL=postgresql://username:password@localhost/gas_tracker
-SECRET_KEY=your-secret-key-here
+3. Set up the frontend:
+```bash
+cd frontend
+npm install
 ```
 
-4. Run the database migrations:
+4. Configure environment variables:
 ```bash
-alembic upgrade head
+# Backend (.env)
+DATABASE_URL=postgresql://user:password@localhost/gas_tracker
+SECRET_KEY=your-secret-key
+ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=30
+
+# Frontend (.env)
+REACT_APP_API_URL=http://localhost:8000
 ```
 
-5. Start the backend server:
+### Running the Application
+
+1. Start the backend:
 ```bash
+cd backend
 uvicorn main:app --reload
 ```
 
-The API will be available at `http://localhost:8000`. API documentation is available at `http://localhost:8000/docs`.
+2. Start the frontend:
+```bash
+cd frontend
+npm start
+```
 
-### Frontend Setup (Coming Soon)
+## Deployment
 
-## API Endpoints
-
-### Authentication
-- `POST /api/users/register` - Register a new user
-- `POST /api/users/token` - Get access token
-- `GET /api/users/me` - Get current user info
-
-### Cylinders
-- `POST /api/cylinders/` - Create a new cylinder
-- `GET /api/cylinders/` - List all cylinders
-- `GET /api/cylinders/{cylinder_id}` - Get cylinder details
-- `PUT /api/cylinders/{cylinder_id}` - Update cylinder
-- `DELETE /api/cylinders/{cylinder_id}` - Delete cylinder
-- `GET /api/cylinders/{cylinder_id}/qr-code` - Get cylinder QR code
-
-### Customers
-- `POST /api/customers/` - Create a new customer
-- `GET /api/customers/` - List all customers
-- `GET /api/customers/{customer_id}` - Get customer details
-- `PUT /api/customers/{customer_id}` - Update customer
-- `DELETE /api/customers/{customer_id}` - Delete customer
-- `POST /api/customers/{customer_id}/locations` - Add customer location
-- `GET /api/customers/{customer_id}/locations` - List customer locations
-
-### Movements
-- `POST /api/movements/cylinder` - Create cylinder movement
-- `GET /api/movements/cylinder` - List all movements
-- `GET /api/movements/cylinder/{cylinder_id}` - Get cylinder movement history
-- `POST /api/movements/transaction` - Create transaction
-- `GET /api/movements/transaction` - List all transactions
-- `GET /api/movements/transaction/{transaction_id}` - Get transaction details
-
-### Maintenance
-- `POST /api/maintenance/` - Create maintenance record
-- `GET /api/maintenance/` - List all maintenance records
-- `GET /api/maintenance/cylinder/{cylinder_id}` - Get cylinder maintenance history
-- `PUT /api/maintenance/{record_id}` - Update maintenance record
-- `GET /api/maintenance/upcoming` - Get upcoming maintenance
-- `GET /api/maintenance/overdue` - Get overdue maintenance
-
-### Analytics
-- `GET /api/analytics/dashboard` - Get dashboard metrics
-- `GET /api/analytics/cylinder-status` - Get cylinder status analytics
-- `GET /api/analytics/movement-trends` - Get movement trends
-- `GET /api/analytics/maintenance-analytics` - Get maintenance analytics
-- `GET /api/analytics/customer-analytics` - Get customer analytics
-- `GET /api/analytics/export/report` - Export analytics report
-
-## User Roles
-
-- Admin: Full access to all features
-- Manager: Can manage cylinders, customers, and transactions
-- Driver: Can perform cylinder movements
-- Technician: Can perform maintenance
-- Customer: Limited access to their own data
+The application is configured for deployment on Render. The `render.yaml` file contains all necessary configuration for:
+- PostgreSQL database setup
+- Backend service deployment
+- Environment variable configuration
 
 ## Contributing
 
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details. 
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Support
+
+For support, please open an issue in the GitHub repository or contact the maintainers.
+
+## Acknowledgments
+
+- FastAPI team for the amazing framework
+- React team for the frontend library
+- All contributors who have helped shape this project 
