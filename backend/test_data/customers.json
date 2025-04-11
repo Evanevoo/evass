@@ -1,0 +1,89 @@
+{
+  "customers": [
+    {
+      "email": "hospital@example.com",
+      "full_name": "City General Hospital",
+      "phone_number": "+1234567890",
+      "address": "123 Medical Center Drive",
+      "is_active": true,
+      "locations": [
+        {
+          "name": "Main Hospital",
+          "address": "123 Medical Center Drive",
+          "contact_person": "John Smith",
+          "contact_phone": "+1234567891",
+          "is_active": true
+        },
+        {
+          "name": "Emergency Department",
+          "address": "123 Medical Center Drive, Building B",
+          "contact_person": "Sarah Johnson",
+          "contact_phone": "+1234567892",
+          "is_active": true
+        }
+      ]
+    },
+    {
+      "email": "manufacturing@example.com",
+      "full_name": "ABC Manufacturing Co.",
+      "phone_number": "+1987654321",
+      "address": "456 Industrial Park",
+      "is_active": true,
+      "locations": [
+        {
+          "name": "Main Factory",
+          "address": "456 Industrial Park",
+          "contact_person": "Mike Brown",
+          "contact_phone": "+1987654322",
+          "is_active": true
+        },
+        {
+          "name": "Warehouse",
+          "address": "456 Industrial Park, Building 2",
+          "contact_person": "Lisa Wilson",
+          "contact_phone": "+1987654323",
+          "is_active": true
+        }
+      ]
+    },
+    {
+      "email": "research@example.com",
+      "full_name": "XYZ Research Labs",
+      "phone_number": "+1122334455",
+      "address": "789 Science Park",
+      "is_active": true,
+      "locations": [
+        {
+          "name": "Main Laboratory",
+          "address": "789 Science Park",
+          "contact_person": "Dr. Robert Chen",
+          "contact_phone": "+1122334456",
+          "is_active": true
+        }
+      ]
+    }
+  ],
+  "test_cases": {
+    "valid_emails": [
+      "valid.email@example.com",
+      "user.name@domain.com",
+      "user+tag@example.com"
+    ],
+    "invalid_emails": [
+      "invalid.email",
+      "user@.com",
+      "@domain.com",
+      "user@domain."
+    ],
+    "valid_phone_numbers": [
+      "+1234567890",
+      "123-456-7890",
+      "(123) 456-7890"
+    ],
+    "invalid_phone_numbers": [
+      "123",
+      "123-456",
+      "abc-def-ghij"
+    ]
+  }
+} 

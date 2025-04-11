@@ -1,0 +1,64 @@
+{
+  "users": [
+    {
+      "email": "admin@example.com",
+      "password": "admin123",
+      "full_name": "Admin User",
+      "role": "admin",
+      "phone_number": "1234567890",
+      "address": "123 Admin St",
+      "is_active": true
+    },
+    {
+      "email": "manager@example.com",
+      "password": "manager123",
+      "full_name": "Manager User",
+      "role": "manager",
+      "phone_number": "2345678901",
+      "address": "456 Manager Ave",
+      "is_active": true
+    },
+    {
+      "email": "driver@example.com",
+      "password": "driver123",
+      "full_name": "Driver User",
+      "role": "driver",
+      "phone_number": "3456789012",
+      "address": "789 Driver Rd",
+      "is_active": true
+    },
+    {
+      "email": "inactive@example.com",
+      "password": "inactive123",
+      "full_name": "Inactive User",
+      "role": "driver",
+      "phone_number": "4567890123",
+      "address": "321 Inactive Blvd",
+      "is_active": false
+    }
+  ],
+  "test_cases": {
+    "valid_emails": [
+      "test@example.com",
+      "user.name@domain.com",
+      "user+tag@example.com"
+    ],
+    "invalid_emails": [
+      "invalid",
+      "invalid@",
+      "@invalid.com",
+      "invalid@.com"
+    ],
+    "valid_passwords": [
+      "Password123!",
+      "Str0ngP@ss",
+      "Complex#123"
+    ],
+    "invalid_passwords": [
+      "short",
+      "nouppercase123!",
+      "NOLOWERCASE123!",
+      "NoSpecial123"
+    ]
+  }
+} 

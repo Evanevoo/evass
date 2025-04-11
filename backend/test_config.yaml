@@ -1,0 +1,60 @@
+# Test Environment Configuration
+environment:
+  database: "sqlite:///test.db"
+  log_level: "DEBUG"
+  api_url: "http://localhost:8000"
+  test_timeout: 30
+
+# Test Dependencies
+dependencies:
+  required:
+    - pytest
+    - pytest-cov
+    - pytest-xdist
+    - pytest-timeout
+    - pytest-rerunfailures
+    - pytest-profile
+  optional:
+    - pytest-html
+    - pytest-sugar
+
+# Test Data Configuration
+test_data:
+  fixtures:
+    - "users.json"
+    - "cylinders.json"
+    - "customers.json"
+  seed_data:
+    - "test_data.sql"
+    - "sample_data.json"
+
+# Test Categories
+test_categories:
+  unit:
+    markers: ["unit"]
+    timeout: 5
+  integration:
+    markers: ["integration"]
+    timeout: 30
+  e2e:
+    markers: ["e2e"]
+    timeout: 60
+
+# Test Reports
+reports:
+  html:
+    enabled: true
+    output_dir: "test_reports"
+  coverage:
+    enabled: true
+    threshold: 80
+  profiling:
+    enabled: true
+    output_dir: "test_profiles"
+
+# Test Execution
+execution:
+  parallel: true
+  max_workers: 4
+  retries: 2
+  failfast: false 

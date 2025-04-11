@@ -1,0 +1,76 @@
+{
+  "cylinders": [
+    {
+      "serial_number": "CYL001",
+      "type": "Oxygen",
+      "capacity": 10,
+      "pressure_rating": 200,
+      "tare_weight": 15.5,
+      "status": "in_stock",
+      "manufacture_date": "2023-01-15",
+      "last_inspection_date": "2023-12-01"
+    },
+    {
+      "serial_number": "CYL002",
+      "type": "Nitrogen",
+      "capacity": 20,
+      "pressure_rating": 300,
+      "tare_weight": 25.0,
+      "status": "in_use",
+      "manufacture_date": "2023-02-20",
+      "last_inspection_date": "2023-12-15"
+    },
+    {
+      "serial_number": "CYL003",
+      "type": "Argon",
+      "capacity": 15,
+      "pressure_rating": 250,
+      "tare_weight": 20.0,
+      "status": "maintenance",
+      "manufacture_date": "2023-03-10",
+      "last_inspection_date": "2023-11-30"
+    },
+    {
+      "serial_number": "CYL004",
+      "type": "CO2",
+      "capacity": 5,
+      "pressure_rating": 150,
+      "tare_weight": 10.0,
+      "status": "retired",
+      "manufacture_date": "2022-12-01",
+      "last_inspection_date": "2023-10-15"
+    }
+  ],
+  "test_cases": {
+    "valid_types": [
+      "Oxygen",
+      "Nitrogen",
+      "Argon",
+      "CO2",
+      "Helium",
+      "Acetylene"
+    ],
+    "valid_statuses": [
+      "in_stock",
+      "in_use",
+      "maintenance",
+      "retired"
+    ],
+    "valid_capacities": [
+      5,
+      10,
+      15,
+      20,
+      25,
+      30
+    ],
+    "valid_pressure_ratings": [
+      150,
+      200,
+      250,
+      300,
+      350,
+      400
+    ]
+  }
+} 
